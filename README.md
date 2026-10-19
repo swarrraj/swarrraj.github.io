@@ -1,181 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Swaraj Landge - Resume</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swaraj Landge — Resume</title>
 <style>
-  @page { size: Letter; margin: 0.5in; }
   * { box-sizing: border-box; }
-  body {
+
+  html, body {
     margin: 0;
-    background: #e9e9e9;
-    font-family: "Latin Modern Roman", "CMU Serif", "Computer Modern", "Times New Roman", Times, serif;
-    color: #000;
-    font-size: 10.5pt;
-    line-height: 1.28;
+    padding: 0;
   }
+
+  body {
+    background: #f2f2f2;
+    padding: 24px 16px 40px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 12px;
+    line-height: 1.38;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+  }
+
   .page {
-    width: 8.5in;
-    min-height: 11in;
-    margin: 24px auto;
-    padding: 0.5in 0.6in;
+    max-width: 820px;
+    margin: 0 auto;
     background: #fff;
-    box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    padding: 34px 44px 38px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, .13);
   }
-  header { text-align: center; margin-bottom: 6px; }
-  header h1 {
-    margin: 0 0 4px;
-    font-size: 24pt;
+
+  /* ---------- Header ---------- */
+  header { text-align: center; }
+
+  h1 {
+    font-size: 31px;
     font-weight: 700;
-    font-variant: small-caps;
-    letter-spacing: .5px;
+    letter-spacing: .3px;
+    margin: 0 0 7px;
   }
-  .contact { font-size: 10pt; }
-  .contact a { color: #000; text-decoration: none; }
-  .contact span.sep { margin: 0 8px; }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px 20px;
+    font-size: 11px;
+  }
+
+  .contact .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .contact svg {
+    width: 11px;
+    height: 11px;
+    fill: #111;
+    flex: none;
+  }
+
+  .contact a {
+    color: #111;
+    text-decoration: none;
+  }
+
+  .contact a:hover { text-decoration: underline; }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 13px; }
 
   h2 {
-    margin: 12px 0 5px;
-    font-size: 11.5pt;
+    font-size: 13px;
     font-weight: 700;
-    font-variant: small-caps;
-    letter-spacing: .6px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 1px;
+    margin: 0 0 5px;
+    padding-top: 3px;
+    border-top: 1.2px solid #111;
+    letter-spacing: .1px;
   }
-  p { margin: 3px 0; }
-  .row {
+
+  p { margin: 0; }
+
+  /* ---------- Entry rows (title left, date right) ---------- */
+  .entry {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 12px;
+    gap: 14px;
   }
-  .row .right { white-space: nowrap; }
-  .entry { margin-top: 5px; }
-  .entry:first-of-type { margin-top: 2px; }
-  .role { font-weight: 700; }
-  .italic { font-style: italic; }
-  ul {
-    margin: 2px 0 0;
-    padding-left: 18px;
-  }
-  ul li { margin: 1.5px 0; padding-left: 2px; }
-  ul.plain { padding-left: 0; list-style: none; }
-  .skills p { margin: 2px 0; }
-  .skills b, .lead b { font-weight: 700; }
 
-  @media print {
-    body { background: #fff; }
-    .page { margin: 0; box-shadow: none; width: auto; min-height: 0; padding: 0; }
+  .entry .left { font-weight: 700; }
+
+  .entry .right {
+    font-size: 10.5px;
+    white-space: nowrap;
+    flex: none;
   }
-  @media (max-width: 8.6in) {
-    .page { width: 100%; margin: 0; padding: 20px 16px; box-shadow: none; }
-    .row { flex-direction: column; gap: 0; }
-    .row .right { white-space: normal; }
+
+  .sub { margin-bottom: 2px; }
+
+  .italic { font-style: italic; }
+
+  /* ---------- Lists ---------- */
+  ul {
+    margin: 2px 0 7px;
+    padding-left: 16px;
+  }
+
+  li { margin-bottom: 2px; }
+
+  li:last-child { margin-bottom: 0; }
+
+  .block { margin-bottom: 7px; }
+  .block:last-child { margin-bottom: 0; }
+
+  /* ---------- Skills ---------- */
+  .skill-line { margin-bottom: 1px; }
+  .skill-line b { font-weight: 700; }
+
+  /* ---------- Leadership ---------- */
+  .lead-item { margin-bottom: 1px; }
+  .lead-item b { font-weight: 700; }
+
+  /* ---------- Link-ish ---------- */
+  .link {
+    color: #1a4fa0;
+    text-decoration: none;
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 11px;
+    }
+    .page {
+      box-shadow: none;
+      max-width: none;
+      padding: 0.45in 0.55in;
+    }
+    h1 { font-size: 28px; }
+    a { color: #111 !important; }
+    section { break-inside: avoid; }
+  }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 620px) {
+    body { padding: 12px 8px 24px; }
+    .page { padding: 22px 18px 26px; }
+    h1 { font-size: 25px; }
+    .entry { flex-direction: column; gap: 0; }
+    .entry .right { white-space: normal; }
+    .contact { gap: 4px 14px; }
   }
 </style>
 </head>
 <body>
-<div class="page">
+<main class="page">
 
+  <!-- ================= HEADER ================= -->
   <header>
     <h1>Swaraj Landge</h1>
     <div class="contact">
-      <span>+91 9021609901</span><span class="sep">|</span>
-      <a href="mailto:swarajlandge0305@gmail.com">swarajlandge0305@gmail.com</a><span class="sep">|</span>
-      <a href="#" target="_blank" rel="noopener">LinkedIn: Swaraj Landge</a>
+      <span class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        <a href="tel:+919021609901">+91 9021609901</a>
+      </span>
+      <span class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2-.5L12 11.2 19.8 5H4.2zM20 6.8l-7.4 5.9a1 1 0 0 1-1.2 0L4 6.8v11.7c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V6.8z"/></svg>
+        <a href="mailto:swarajlandge0305@gmail.com">swarajlandge0305@gmail.com</a>
+      </span>
+      <span class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.5 4.7 5.8V21h-4v-5.6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21h-4V9z"/></svg>
+        <a href="https://www.linkedin.com/in/swaraj-landge" target="_blank" rel="noopener">LinkedIn Swaraj Landge</a>
+      </span>
     </div>
   </header>
 
+  <!-- ================= SUMMARY ================= -->
   <section>
     <h2>Summary</h2>
     <p>Analytically-driven strategy candidate with experience across corporate development, market research, and financial modeling, turning data into decisions across cross-functional initiatives. Skilled at pairing structured problem-solving with AI-powered tools to accelerate analysis, scaling outcomes across 200+ stakeholders while sharpening decision quality.</p>
   </section>
 
-  <section class="skills">
+  <!-- ================= SKILLS ================= -->
+  <section>
     <h2>Skills &amp; Certifications</h2>
-    <p><b>Analytical &amp; Technical:</b> Advanced Excel, Power BI, Tableau, Python, R, Stata, SQL, Workflow Automation, Statistical Modeling &amp; Forecasting</p>
-    <p><b>Consulting &amp; Business:</b> Market Research, Financial Modeling &amp; Valuation, Competitive Benchmarking, Process Optimization, Client Deliverables</p>
-    <p><b>Professional Skills:</b> Problem-Solving &amp; Critical Thinking, Attention to Detail, Adaptability, Process Improvement</p>
+    <p class="skill-line"><b>Analytical &amp; Technical:</b> Advanced Excel, Power BI, Tableau, Python, R, Stata, SQL, Workflow Automation, Statistical Modeling &amp; Forecasting</p>
+    <p class="skill-line"><b>Consulting &amp; Business:</b> Market Research, Financial Modeling &amp; Valuation, Competitive Benchmarking, Process Optimization, Client Deliverables</p>
+    <p class="skill-line"><b>Professional Skills:</b> Problem-Solving &amp; Critical Thinking, Attention to Detail, Adaptability, Process Improvement</p>
   </section>
 
+  <!-- ================= EDUCATION ================= -->
   <section>
     <h2>Education</h2>
-    <div class="entry">
-      <div class="row"><span class="role">CHRIST (Deemed to be University), Bengaluru</span></div>
-      <div class="row"><span class="italic">B.Sc. Economics, Mathematics and Statistics (GPA: 3.80/4.0)</span><span class="right">Jul 2023 - Mar 2026</span></div>
-      <p><b>Relevant Coursework:</b> Econometrics, Applied Regression, Macroeconomics, Financial Markets</p>
+    <div class="block">
+      <div class="entry">
+        <span class="left">CHRIST (Deemed to be University), Bengaluru</span>
+        <span class="right">Jul 2023 - Mar 2026</span>
+      </div>
+      <p>B.Sc. Economics, Mathematics and Statistics (GPA: 3.80/4.0)</p>
+      <p class="italic">Relevant Coursework: Econometrics, Applied Regression, Macroeconomics, Financial Markets</p>
     </div>
-    <div class="entry">
-      <div class="row"><span><span class="role">Army Public School, Dehuroad (Pune):</span> Grade 1-12</span><span class="right">May 2011 - May 2023</span></div>
+    <div class="block">
+      <div class="entry">
+        <span class="left">Army Public School, Dehradun (Pune): Grade 1-12</span>
+        <span class="right">May 2011 - May 2023</span>
+      </div>
     </div>
   </section>
-
+ 
+  <!-- ================= EXPERIENCE ================= -->
   <section>
     <h2>Experience</h2>
-
-    <div class="entry">
-      <div class="row"><span><span class="role">Morya Assure Pvt. Ltd.</span> &ndash; <span class="italic">Business Strategy &amp; Analytics Intern</span></span><span class="right">Apr 2026 &ndash; Jun 2026</span></div>
+    <div class="block">
+      <div class="entry">
+        <span class="left">Morya Assure Pvt. Ltd. &ndash; Business Strategy &amp; Analytics Intern</span>
+        <span class="right">Apr 2026 - Jun 2026</span>
+      </div>
       <ul>
         <li>Built a predictive valuation model (Python, Power BI) benchmarked against the prior manual estimation method, lifting forecast accuracy by 17% and directly shaping 11+ corporate-development and investment decisions</li>
         <li>Redesigned recurring data-consolidation and reporting workflows via n8n automation, cutting turnaround time and removing hours of manual work across 6 cross-functional teams</li>
       </ul>
     </div>
-
-    <div class="entry">
-      <div class="row"><span><span class="role">Wayspire</span> &ndash; <span class="italic">Market Research Intern</span></span><span class="right">Dec 2025 &ndash; Mar 2026</span></div>
+    <div class="block">
+      <div class="entry">
+        <span class="left">Wayspire &ndash; Market Research Intern</span>
+        <span class="right">Dec 2025 - Mar 2026</span>
+      </div>
       <ul>
-        <li>Conducted primary and secondary research across 17 target segments, synthesizing findings into a competitive-positioning brief that informed the company&rsquo;s go-to-market approach</li>
+        <li>Conducted primary and secondary research across 17 target segments, synthesizing findings into a competitive-positioning brief that informed the company's go-to-market approach</li>
         <li>Built a competitive benchmarking analysis of 50+ market players, identifying positioning gaps and translating them into actionable recommendations for stakeholders</li>
       </ul>
     </div>
 
-    <div class="entry">
-      <div class="row"><span><span class="role">Knack Tech</span> &ndash; <span class="italic">Data Analytics Intern</span></span><span class="right">Jul 2025 &ndash; Oct 2025</span></div>
+    <div class="block">
+      <div class="entry">
+        <span class="left">Knack Tech &ndash; Data Analytics Intern</span>
+        <span class="right">Jul 2025 - Oct 2025</span>
+      </div>
       <ul>
-        <li>Modeled performance data (Excel, Stata) across 35+ products to isolate top drivers of user engagement, producing findings that directly shaped leadership&rsquo;s product-strategy calls</li>
+        <li>Modeled performance data (Excel, Stata) across 35+ products to isolate top drivers of user engagement, producing findings that directly shaped leadership's product-strategy calls</li>
         <li>Delivered retention and engagement analysis to cross-functional stakeholders, converting raw usage data into prioritized, actionable recommendations</li>
       </ul>
     </div>
 
-    <div class="entry">
-      <div class="row"><span><span class="role">Christites for Climate Action (CCA)</span> &ndash; <span class="italic">Head of Event Management</span></span><span class="right">Apr 2025 &ndash; May 2026</span></div>
+    <div class="block">
+      <div class="entry">
+        <span class="left">Christites for Climate Action (CCA) &ndash; Head of Event Management</span>
+        <span class="right">Apr 2025 - May 2026</span>
+      </div>
       <ul>
-        <li>Owned a Rs.2,00,000+ budget and negotiated 20+ vendor/speaker contracts across 75+ events (incl. Verdant, Sustainathon), scaling attendance to 1,200+ &mdash; a 71% YoY increase</li>
+        <li>Owned a Rs.2,00,000+ budget and negotiated 20+ vendor/speaker contracts across 75+ events (incl. Verdant, Sustaination), scaling attendance to 1,200+ &mdash; a 71% YoY increase</li>
         <li>Led a 150+-person core committee as sole on-ground decision-maker, resolving live scheduling conflicts across concurrent events with zero major disruptions</li>
       </ul>
     </div>
   </section>
 
+  <!-- ================= LEADERSHIP ================= -->
   <section>
     <h2>Leadership &amp; Community Engagement</h2>
-    <ul>
-      <li><b>ECON Lab (Research Intern):</b> Conducted independent economic research applying statistical methods (regression analysis, hypothesis testing) to real-world datasets across research questions, under faculty supervision</li>
-      <li><b>Centre for Placement and Career Guidance (Placement Coordinator):</b> Bridged students and recruiters &mdash; coordinating drives, interview logistics, and offer rollouts end-to-end.</li>
-      <li><b>DREAMS IP (Personnel Coordinator):</b> Mentored 180+ students, designing sessions to boost engagement.</li>
-      <li><b>SOS Connect (Project Coordinator):</b> Aligned volunteers and timelines to keep student-led projects on track.</li>
-      <li><b>PWA NGO (Social Development Intern):</b> Supported underprivileged communities through education and mentorship.</li>
-    </ul>
+    <p class="lead-item"><b>ECON Lab (Research Intern):</b> Conducted independent economic research applying statistical methods (regression analysis, hypothesis testing) to real-world datasets across research questions, under faculty supervision</p>
+    <p class="lead-item"><b>Centre for Placement and Career Guidance (Placement Coordinator):</b> Bridged students and recruiters &mdash; coordinating drives, interview logistics, and offer rollouts end-to-end.</p>
+    <p class="lead-item"><b>DREAMS IP (Personnel Coordinator):</b> Mentored 180+ students, designing sessions to boost engagement.</p>
+    <p class="lead-item"><b>SOS Connect (Project Coordinator):</b> Aligned volunteers and timelines to keep student-led projects on track."</p>
+    <p class="lead-item"><b>PWA NGO (Social Development Intern):</b> Supported underprivileged communities through education and mentorship."</p>
   </section>
 
+  <!-- ================= PROJECTS ================= -->
   <section>
     <h2>Projects</h2>
     <ul>
-      <li><b>China&rsquo;s MedTech Growth Project (Tableau)</b> &ndash; Interactive Dashboard analyzing China&rsquo;s medical technology expansion across Southeast Asian markets.</li>
-      <li><b>Startup Financial Health Analyzer (Excel, Power BI, Python)</b> &ndash; Interactive dashboard across 60 companies to flag liquidity/solvency risk, cutting manual review time.</li>
-      <li><b>Macroeconomic Recovery Dashboard (Power BI, Tableau, Metabase, World Bank API)</b> &ndash; Live dashboard fusing World Bank data with Stata-based analysis across 190+ countries/indicators to track post-pandemic recovery trends.</li>
+      <li><b>China's MedTech Growth Project</b> (Tableau) &ndash; <span class="link">Interactive Dashboard</span> analyzing China's medical technology expansion across Southeast Asian markets.</li>
+      <li><b>Startup Financial Health Analyzer</b> (Excel, Power BI, Python) &ndash; Interactive dashboard across 60 companies to flag liquidity/solvency risk, cutting manual review time.</li>
+      <li><b>Macroeconomic Recovery Dashboard</b> (Power BI, Tableau, Metabase, World Bank API) &ndash; Live dashboard fusing World Bank data with Stata-based analysis across 190+ countries/indicators to track post-pandemic recovery trends.</li>
     </ul>
   </section>
 
+  <!-- ================= ACHIEVEMENTS ================= -->
   <section>
     <h2>Achievements</h2>
-    <ul>
-      <li>Winner, Inter-University Business Case Study Competition (St. Joseph&rsquo;s University, 2025)</li>
-      <li>Winner, NELDA Kala Ratna Award</li>
-    </ul>
+    <p>Winner, Inter-University Business Case Study Competition (St. Joseph's University, 2025)</p>
+    <p>Winner, NELDA Kala Ratna Award</p>
   </section>
 
-</div>
+</main>
 </body>
 </html>
